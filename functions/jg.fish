@@ -26,7 +26,5 @@ function jg --argument-names cmd -d "Jira Genie"
             pr $argv
         case prd
             prd $argv
-            default
-            echo "Unknown command: $cmd"
     end
 end
