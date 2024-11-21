@@ -1,8 +1,6 @@
 function _bname -d "Generates a Git branch name using a Jira Ticket ID"
     set -l options h/help q/quiet c/clipboard
 
-    echo "argv in bname: $argv"
-
     argparse $options -- $argv
 
     if set --query _flag_help
