@@ -23,7 +23,7 @@ function bname -d "Generates a Git branch name using a Jira Ticket ID"
         set jira_ticket_id $argv
     else
         printf "A Jira Ticket ID/Key must be provided as an argument or referenced in the current branch name\n\n"
-        printf "Examples: \n pr 12345 \n pr EMR-12345"
+        printf "Examples: \n bname 12345 \n bname EMR-12345"
         return 1
     end
 
