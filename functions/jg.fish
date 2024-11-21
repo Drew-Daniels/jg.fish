@@ -1,4 +1,4 @@
-function jg --argument-names cmd -d "Jira Genie"
+function jg --argument-names cmd, subcmd -d "Jira Genie"
 
     set -l jg_version 0.0.1
 
@@ -15,10 +15,10 @@ function jg --argument-names cmd -d "Jira Genie"
         case jlink
             jlink
         case bname
-            bname $argv[2]
+            bname $subcmd
         case pr
-            pr $argv[2]
+            pr $subcmd
         case prd
-            prd $argv[2]
+            prd $subcmd
     end
 end
