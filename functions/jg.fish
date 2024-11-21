@@ -1,4 +1,4 @@
-function jg --argument-names cmd argv -d "Jira Genie"
+function jg --argument-names cmd rest -d "Jira Genie"
 
     set -l jg_version 0.0.1
 
@@ -16,12 +16,12 @@ function jg --argument-names cmd argv -d "Jira Genie"
             printf "  pr      Generates a Slack Message to Link to a Jira Ticket and Pull Request\n"
             printf "  prd     Generates a Description for a Given PR\n"
         case jlink
-            _jlink $argv
+            _jlink $rest
         case bname
-            _bname $argv
+            _bname $rest
         case pr
-            _pr $argv
+            _pr $rest
         case prd
-            _prd $argv
+            _prd $rest
     end
 end
