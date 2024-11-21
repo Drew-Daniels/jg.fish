@@ -4,6 +4,8 @@ function jg --argument-names cmd -d "Jira Genie"
 
     switch "$cmd"
 
+        echo "argv: $argv"
+
         case -v --version
             echo "jg version, $jg_version"
 
