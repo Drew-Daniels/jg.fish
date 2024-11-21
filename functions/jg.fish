@@ -13,7 +13,7 @@ function jg -d "Jira Genie"
             printf "  pr      Generates a Slack Message to Link to a Jira Ticket and Pull Request\n"
             printf "  prd     Generates a Description for a Given PR\n"
         case jlink
-            jlink
+            jlink $argv[2]
         case bname
             bname $argv[2]
         case pr
