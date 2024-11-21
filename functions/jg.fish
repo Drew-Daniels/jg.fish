@@ -15,5 +15,16 @@ function jg --argument-names cmd -d "Jira Genie"
             printf "  pr      Generates a Slack Message to Link to a Jira Ticket and Pull Request\n"
             printf "  prd     Generates a Description for a Given PR\n"
             return 0
+
+        case jlink
+            jlink $argv
+        case bname
+            bname $argv
+        case pr
+            pr $argv
+        case prd
+            prd $argv
+            default
+            echo "Unknown command: $cmd"
     end
 end
