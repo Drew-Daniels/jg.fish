@@ -1,4 +1,4 @@
-function prd -d "Generates a Description for a Given PR"
+function _prd -d "Generates a Description for a Given PR"
     set -l options h/help q/quiet c/clipboard
 
     argparse $options -- $argv

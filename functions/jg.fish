@@ -14,12 +14,12 @@ function jg --argument-names cmd argv -d "Jira Genie"
             printf "  pr      Generates a Slack Message to Link to a Jira Ticket and Pull Request\n"
             printf "  prd     Generates a Description for a Given PR\n"
         case jlink
-            jlink $argv
+            _jlink $argv
         case bname
-            bname $argv
+            _bname $argv
         case pr
-            pr $argv
+            _pr $argv
         case prd
-            prd $argv
+            _prd $argv
     end
 end
