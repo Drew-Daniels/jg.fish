@@ -4,7 +4,7 @@ function _l -d "Copies Jira Issue Link for Current Git Branch"
     argparse $options -- $argv
 
     if set --query _flag_help
-        printf "Usage: l [OPTIONS]\n\n"
+        printf "Usage: jg l [OPTIONS]\n\n"
         printf "Options:\n"
         printf "  -h/--help       Prints help and exits\n"
         printf "  -i/--id         Get Issue ID\n"
@@ -14,7 +14,6 @@ function _l -d "Copies Jira Issue Link for Current Git Branch"
         return 0
     end
 
-    # validate
     if set -q _flag_i _flag_m
         echo "Cannot specify both -i and -m"
         return 1

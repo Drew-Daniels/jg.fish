@@ -3,7 +3,7 @@ function _pr -d "Generates a Slack Message to Link to a Jira Ticket and Pull Req
     argparse $options -- $argv
 
     if set --query _flag_help
-        printf "Usage: pr <JIRA_TICKET_ID|JIRA_TICKET_KEY> [OPTIONS]\n\n"
+        printf "Usage: jg pr <JIRA_TICKET_ID|JIRA_TICKET_KEY> [OPTIONS]\n\n"
         printf "Options:\n"
         printf "  -c/--clipboard  Copy result to clipboard\n"
         printf "  -q/--quiet      Don't print anything\n"

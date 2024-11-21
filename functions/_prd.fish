@@ -4,7 +4,7 @@ function _prd -d "Generates a Description for a Given PR"
     argparse $options -- $argv
 
     if set --query _flag_help
-        printf "Usage: prd <JIRA_TICKET_ID|JIRA_TICKET_KEY> [OPTIONS]\n\n"
+        printf "Usage: jg prd <JIRA_TICKET_ID|JIRA_TICKET_KEY> [OPTIONS]\n\n"
         printf "Options:\n"
         printf "  -h/--help       Prints help and exits\n"
         printf "  -q/--quiet      Don't print anything\n"
