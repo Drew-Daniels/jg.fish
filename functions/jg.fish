@@ -12,7 +12,7 @@ function jg --argument-names cmd -d "Jira Genie"
             printf "  bname   Generates a Git branch name using a Jira Ticket ID\n"
             printf "  pr      Generates a Slack Message to Link to a Jira Ticket and Pull Request\n"
             printf "  prd     Generates a Description for a Given PR\n"
-        case jl
+        case l
             _l $argv[2..-1]
         case bname
             _bname $argv[2..-1]
