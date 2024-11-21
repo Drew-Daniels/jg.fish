@@ -2,6 +2,8 @@ function jg --argument-names cmd argv -d "Jira Genie"
 
     set -l jg_version 0.0.1
 
+    echo "cmd: $cmd"
+
     switch "$cmd"
         case -v --version
             echo "jg version, $jg_version"
