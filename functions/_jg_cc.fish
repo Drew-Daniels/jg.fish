@@ -36,7 +36,7 @@ function _jg_cc -d "Generates a Conventional Commit Message from a Jira Issue ID
     set -l raw_issue_data (jira issue view $jira_ticket_id --raw)
 
     set -l issue_type (echo $raw_issue_data | jq -r '.fields.issuetype.name')
-    set -l issue_scope_and_summary (echo $raw_issue_data | jq -r '.fields.summary' | sed -r 's/ +/ /g;')
+    set -l issue_scope_and_summary (echo $raw_issue_data | jq -r '.fields.summary' | sed -r 's/ +/ /g; s/ ,/,/g;')
 
     set -l num_colons (echo $issue_scope_and_summary | grep -o ':' | wc -l | tr -d '[:space:]')
 
