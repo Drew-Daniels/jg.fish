@@ -1,0 +1,38 @@
+function _jg_find -d "Finds the latest GH PR for a given Jira Ticket ID or Key"
+    set -l options h/help q/quiet c/clipboard
+
+    argparse $options -- $argv
+
+    if set --query _flag_help
+        printf "Usage: jg cc <JIRA_TICKET_ID|JIRA_TICKET_KEY> [OPTIONS]\n\n"
+        printf "Options:\n"
+        printf "  -h/--help       Prints help and exits\n"
+        printf "  -q/--quiet      Don't print anything\n"
+        printf "  -c/--clipboard  Copy result to clipboard\n"
+        return 0
+    end
+
+    if test -z "$_flag_c"; and set -q _flag_q
+        echo "Cannot use quiet mode without copying to clipboard"
+        return 1
+    end
+
+    if test -z "$argv"
+        set jira_ticket_id (jg link -i)
+    else if test (echo $argv[1] | grep -o '[0-9]\{5\}')
+        set jira_ticket_id $argv
+    else
+        printf "A Jira Ticket ID/Key must be provided as an argument or referenced in the current branch name\n\n"
+        printf "Examples: \n cc 12345 \n cc EMR-12345"
+        return 1
+    end
+
+    if not string match -qi "*emr*" $jira_ticket_id
+        set jira_ticket_id EMR-$jira_ticket_id
+    else
+        set jira_ticket_id (echo $jira_ticket_id | tr a-z A-Z)
+    end
+
+    set -l gh_number_and_link (gh search prs $jira_issue_id --assignee="@me" --json=number,title,url --match=title --limit=1 | jq -r '.[0] | [.number, .url] | join(" ")')
+    echo $gh_number_and_link
+end
