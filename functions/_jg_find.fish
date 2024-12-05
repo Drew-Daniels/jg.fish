@@ -33,7 +33,7 @@ function _jg_find -d "Finds the latest GH PR for a given Jira Ticket ID or Key"
         set jira_ticket_id (echo $jira_ticket_id | tr a-z A-Z)
     end
 
-    set -l gh_link (gh search prs $jira_ticket_id --assignee="@me" --json=number,title,url --match=title --limit=1 | jq -r '.[0] | .url')
+    set -l gh_link (gh search prs $jira_ticket_id --assignee="@me" --json=number,title,url --match=title --limit=1 | jq -r '.[0] | .url // empty')
 
     if string match -q "" "$gh_link"
         echo "No PR found for Jira Issue $jira_ticket_id under your name"
