@@ -1,1 +1,1 @@
-# Jira Genie (jg)
+# JGit
